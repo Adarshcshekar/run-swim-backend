@@ -6,6 +6,7 @@ const cors = require("cors");
 
 const authRoutes = require("./routes/auth.routes");
 const dataRoutes = require("./routes/data.routes");
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -20,6 +21,6 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api", dataRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
